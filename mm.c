@@ -33,7 +33,18 @@ int main()
     return 0;
 }
 
-//Test module was initialized correctly.
+void instantiate_new_family(char *struct_name, uint32_t size)
+{
+    if (first_container == NULL)
+    {
+        void *first = get_page_from_kernel(1);
+    }
+    else
+    {
+    }
+}
+
+///Test module was initialized correctly.
 void test()
 {
     printf("Page size = %lu\n", SYS_PAGE_SIZE);
