@@ -29,13 +29,17 @@ static void purge_page_from_kernel(void *page, int units)
 int main()
 {
     init();
+    test();
+    return 0;
+}
 
+//Test module was initialized correctly.
+void test()
+{
     printf("Page size = %lu\n", SYS_PAGE_SIZE);
     void *address1 = get_page_from_kernel(1);
     void *address2 = get_page_from_kernel(1);
     printf("Page 1 %p | Page 2 %p\n", address1, address2);
     purge_page_from_kernel(address1, 1);
     purge_page_from_kernel(address2, 1);
-
-    return 0;
 }
